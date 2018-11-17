@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/darkergray"
+   >
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--Border Video-->
+        <VideoView
+            android:id="@+id/borderTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+        <EditText
+            android:id="@+id/amountEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gotham_bold"
+            android:gravity="center"
+            android:hint="@string/tap_enter_amount"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+            android:textColorHint="@color/bluelogodark"
+            android:textSize="25sp" />
+        <!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gotham_bold"
+                    android:text="@string/tip_title"
+                    android:textAlignment="center" />
+
+
+                <TextView
+                    android:id="@+id/percentTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gotham_book"
+                    android:padding="1dp"
+                    android:text="@string/zero_percent"
+                    android:textAlignment="center"
+                    android:textSize="25sp" />
+                -->
+
+        <!--PERCENT READING-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <!-- UNUSED PERCENT LABEL
+            <TextView
+
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/gotham_bold"
+                android:padding="1dp"
+                android:text="TIP AMOUNT: "
+                android:textAlignment="textEnd"
+                android:textSize="20dp" />
+            -->
+
+            <TextView
+                android:id="@+id/percentTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_weight="1"
+                android:fontFamily="@font/gotham_bold"
+                android:paddingBottom="1dp"
+                android:text="@string/zero_percent"
+                android:textAlignment="center"
+                android:textColor="@color/barGreen"
+                android:textSize="30dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="6"
+                android:shadowDy="6"
+                android:shadowRadius="10"
+                />
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/percentSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:maxWidth="600dp"
+            android:maxHeight="4dp"
+            android:minWidth="200dp"
+            android:minHeight="3dp"
+            android:progress="15"
+            android:progressDrawable="@drawable/volume_control"
+            android:thumb="@drawable/giftipthumb_smaller"
+
+            android:padding="10dp"/>
+<!-- android:thumb="@drawable/thumb_image" -->
+
+        <!--PERCENTAGE BUTTONS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:padding="1dp">
+
+            <ImageButton
+                android:id="@+id/btn10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tenpercentbtn"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:padding="1dp"/>
+
+            <ImageButton
+                android:id="@+id/btn15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/fifteenbtn"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:padding="1dp"/>
+
+            <ImageButton
+                android:id="@+id/btn20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/twentybtn"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:padding="1dp"/>
+
+            <ImageButton
+                android:id="@+id/btn30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/thirtybtn"
+                android:background="@null"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:padding="1dp"/>
+
+        </LinearLayout>
+
+        <!--GIF View-->
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/laguna"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:paddingBottom="1dp"
+            />
+
+
+        <!--PRICE LAYOUT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/priceLabelTextView"
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/gotham_bold"
+                android:padding="1dp"
+                android:text="PRICE: "
+                android:textAlignment="textEnd"
+                android:textSize="20sp"
+
+                android:textColor="@color/bluelogodark"
+                />
+
+            <TextView
+                android:id="@+id/amountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:paddingBottom="1dp"
+                android:text="$0.00"
+                android:fontFamily="@font/gotham_book"
+                android:textSize="20sp"
+
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+
+        <!--TIP LAYOUT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tipLabelTextView"
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/gotham_bold"
+                android:padding="1dp"
+                android:text="TIP: "
+                android:textAlignment="textEnd"
+                android:textSize="20sp"
+
+                android:textColor="@color/barGreen"
+
+                />
+
+            <TextView
+                android:id="@+id/tipTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:paddingBottom="1dp"
+                android:text="$0.00"
+                android:fontFamily="@font/gotham_book"
+                android:textSize="20sp"
+
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+
+
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="?android:attr/listDivider"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/totalLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_bold"
+            android:padding="3dp"
+            android:paddingTop="10dp"
+            android:text="@string/total"
+            android:textAlignment="center"
+            android:textSize="30dp"
+
+            android:textColor="@color/bluelogolight"
+
+
+            android:shadowColor="@color/black"
+            android:shadowDx="6"
+            android:shadowDy="6"
+            android:shadowRadius="10"
+            />
+
+
+
+        <TextView
+            android:id="@+id/totalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_bold"
+            android:padding="3dp"
+            android:text="@string/no_money"
+            android:textAlignment="center"
+
+            android:textSize="50sp"
+
+            android:textColor="@color/white"
+
+            android:shadowColor="@color/black"
+            android:shadowDx="9"
+            android:shadowDy="9"
+            android:shadowRadius="15"
+            />
+        
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
