@@ -22,21 +22,27 @@
             android:id="@+id/borderTop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="60dp"
             />
 
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:paddingBottom="15dp"/>
 
         <EditText
             android:id="@+id/amountEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/gotham_bold"
+            android:layout_height="35dp"
+            android:fontFamily="@font/gotham_book"
             android:gravity="center"
             android:hint="@string/tap_enter_amount"
             android:inputType="numberDecimal"
             android:textAlignment="center"
-
-            android:textColor="@color/white"
-            android:textColorHint="@color/bluelogodark"
+            android:background="@drawable/rounded_edit_text"
+            style="@style/EditTextStyleWhite"
+            android:textColorHint="@color/white"
             android:textSize="25sp" />
         <!--
                 <TextView
@@ -86,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
+                android:padding="3dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/gotham_bold"
                 android:paddingBottom="1dp"
@@ -116,54 +122,68 @@
             android:thumb="@drawable/giftipthumb_smaller"
 
             android:padding="10dp"/>
-<!-- android:thumb="@drawable/thumb_image" -->
-
+        <!-- android:thumb="@drawable/thumb_image" -->
+        <!--
+                   <ImageButton
+                       android:id="@+id/btn10"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       app:srcCompat="@drawable/tenpercentbtn"
+                       android:background="@null"
+                       android:scaleType="fitCenter"
+                       android:padding="1dp"/>
+                   -->
         <!--PERCENTAGE BUTTONS -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QUICK SELECT"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham_book"
+
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColor="@color/white"/>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal"
+            android:gravity="center"
             android:padding="1dp">
-
-            <ImageButton
+            <Button
                 android:id="@+id/btn10"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/tenpercentbtn"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:padding="1dp"/>
-
-            <ImageButton
+                android:text="10%"
+                android:backgroundTint="@color/lightwhite"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gotham_bold"/>
+            <Button
                 android:id="@+id/btn15"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/fifteenbtn"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:padding="1dp"/>
-
-            <ImageButton
+                android:text="15%"
+                android:backgroundTint="@color/lightwhite"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gotham_bold"/>
+            <Button
                 android:id="@+id/btn20"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/twentybtn"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:padding="1dp"/>
-
-            <ImageButton
+                android:text="20%"
+                android:backgroundTint="@color/lightwhite"
+                android:textColor="@color/white"/>
+            <Button
                 android:id="@+id/btn30"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/thirtybtn"
-                android:background="@null"
-                android:layout_weight="1"
-                android:scaleType="fitCenter"
-                android:padding="1dp"/>
+                android:text="@string/mystery"
+                android:backgroundTint="@color/lightwhite"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -271,10 +291,10 @@
             android:layout_gravity="center"
             android:fontFamily="@font/gotham_bold"
             android:padding="3dp"
-            android:paddingTop="10dp"
+            android:paddingTop="8dp"
             android:text="@string/total"
             android:textAlignment="center"
-            android:textSize="30dp"
+            android:textSize="20sp"
 
             android:textColor="@color/bluelogolight"
 
@@ -287,17 +307,18 @@
 
 
 
+        <!--RESULT-->
         <TextView
             android:id="@+id/totalTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/gotham_bold"
-            android:padding="3dp"
+            android:paddingTop="10dp"
             android:text="@string/no_money"
             android:textAlignment="center"
 
-            android:textSize="50sp"
+            android:textSize="45sp"
 
             android:textColor="@color/white"
 

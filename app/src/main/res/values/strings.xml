@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">gifTipLinear</string>
+    <string name="app_name">GifTip</string>
 
     <string name="enter_amount">Enter Amount </string>
-    <string name="tap_enter_amount">Tap Here to Enter Amount</string>
+    <string name="tap_enter_amount"><font size="15">TAP HERE TO ENTER AMOUNT</font></string>
 
     <string name="tip_percentage">15%</string>
 
@@ -14,4 +14,8 @@
 
     <string name="money">$906.28</string>
     <string name="money2">$555.55</string>
+    <string name="mystery">\???</string>
+
+
+
 </resources>

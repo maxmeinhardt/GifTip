@@ -1,9 +1,10 @@
 package com.mycompany.giftiplinear;
 
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
+//import android.content.Intent;
+//import android.graphics.Color;
+//import android.graphics.LinearGradient;
+//import android.graphics.Shader;
+//import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -11,14 +12,14 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
-import android.webkit.WebView;
+//import android.view.animation.AlphaAnimation;
+//import android.view.animation.Animation;
+//import android.view.animation.AnimationUtils;
+//import android.view.animation.RotateAnimation;
+//import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
+//import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.SeekBar;
@@ -26,9 +27,10 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import java.io.IOException;
-import java.io.InputStream;
+//import java.io.IOException;
+//import java.io.InputStream;
 import java.text.NumberFormat; //for locale (tells java what format to pu numbers in
+import java.util.Random;
 
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
@@ -46,13 +48,20 @@ public class MainActivity extends AppCompatActivity {
     private TextView percentTextView;
     private TextView tipTextView;
     private TextView totalTextView;
-    private ImageView gifDisplay;
+    private ImageView gifDisplay;   //THIS IS IMPORTANT, DO NOT COMMENT OUT
     private ImageView returnImage;
 
+    /* Only Use for Image Buttons
     private ImageButton smallBtn;
     private ImageButton mediumBtn;
     private ImageButton largeBtn;
     private ImageButton xLargeBtn;
+    */
+
+    private Button smallBtn;
+    private Button mediumBtn;
+    private Button largeBtn;
+    private Button xLargeBtn;
 
 
     private GifTextView gifImageView;
@@ -61,15 +70,22 @@ public class MainActivity extends AppCompatActivity {
     private GifDrawable gifFromAssets;
 
     VideoView logoVid;
-    VideoView bottomVid;
+    //VideoView bottomVid;
     MediaController m;
 
-    ImageView aniImg;
+    //ImageView aniImg;
+
+    double min = 1;
+    double max = 100;
+    int ran = 15;
+    double dum = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         amountTextView = (TextView) findViewById(R.id.amountTextView);
@@ -87,16 +103,8 @@ public class MainActivity extends AppCompatActivity {
 
         gifDisplay = (GifImageView) findViewById(R.id.laguna);
 
-
-        /*gradient?
-        Shader textShader=new LinearGradient(0, 0, 0, 20,
-                new int[]{Color.GREEN,Color.BLUE},
-                new float[]{0, 1}, Shader.TileMode.CLAMP);
-        totalTextView.getPaint().setShader(textShader);
-        */
-
         //Button Actions
-        smallBtn = (ImageButton) findViewById(R.id.btn10);
+        smallBtn = (Button) findViewById(R.id.btn10);
         smallBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -105,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mediumBtn = (ImageButton) findViewById(R.id.btn15);
+        mediumBtn = (Button) findViewById(R.id.btn15);
         mediumBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -115,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        largeBtn = (ImageButton) findViewById(R.id.btn20);
+        largeBtn = (Button) findViewById(R.id.btn20);
         largeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -124,13 +132,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        xLargeBtn = (ImageButton) findViewById(R.id.btn30);
+        xLargeBtn = (Button) findViewById(R.id.btn30);
         xLargeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                percent = 0.30;
+
+                Random r = new Random();
+                ran = r.nextInt(101) + 1;
+                dum = (ran / 100.00);
+                System.out.println(ran + " = ran | dum = " + dum);
+                percent = dum;
                 calculate();
+
             }
+
         });
 
         //top border video controls
@@ -145,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+        //logoVid.setZOrderOnTop(true);
         logoVid.start();
 
 
@@ -152,6 +168,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        logoVid.pause();
+    }
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        logoVid.start();
+    }
+
+
 
     public ImageView findImage(double per) {
         //determines what gif to display based on the amount you are tipping

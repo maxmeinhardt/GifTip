@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartScreen"
+    android:orientation="vertical"
+    android:background="@color/darkergray">
+
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+        android:orientation="vertical">
+    <EditText
+        android:id="@+id/introText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gotham_bold"
+        android:layout_gravity="center"
+        android:hint="@string/tap_enter_amount"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:padding="10dp"
+
+        android:background="@drawable/rounded_edit_text"
+        style="@style/EditTextStyleWhite"
+        android:textColorHint="@color/white"
+        android:textSize="20sp" />
+        <Button
+            android:id="@+id/introButton"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Calculate Tip"
+            android:backgroundTint="@color/lightwhite"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gotham_bold"
+            android:onClick="sendAmount"/>
+
+</LinearLayout>
+
+</LinearLayout>
